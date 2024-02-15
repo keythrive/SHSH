@@ -1,13 +1,14 @@
-# SHSH
-Shibata-High-Schools-HandsOn
+#### SHSH  Shibata-High-Schools-HandsOn
 ------
 
 <center>
+
 # 講義ノート (Draft version) <!-- omit in toc -->
 ## 新潟県立新発田高等学校 <!-- omit in toc -->
 #### 研修名： 課題研究のための情報処理 <!-- omit in toc -->
 #### 2024/2/19(火) 14:10-16:50 @ 新発田高等学校 <!-- omit in toc -->
 #### 講師：　開志専門職大学　情報学部　堀川 桂太郎 <!-- omit in toc -->
+
 </center>
 
 -----
