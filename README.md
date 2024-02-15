@@ -389,7 +389,7 @@ fig.show()
 -----
 <div style="page-break-before:always"></div>
 
-## セッション5.  WordClowd ワードクラウド
+## セッション5.  WordCloud ワードクラウド
     [ToDo] 
      - テキストで頻出する単語を視覚表現する、例えば・・・
      - 源氏物語、枕草子、三四郎、三国志、現代訳論語...の頻出単語
