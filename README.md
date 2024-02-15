@@ -52,8 +52,8 @@
 
 ####  探求の効能
 - **能動アウトプット型の自己成長**　：　受動インプット教育よりはるかに高い教育効果
-- すべての若者達へ：　　**失敗に恐れず挑戦する実行力**　を
-- 優れたアイディアは簡単に真似できる．　しかし，　卓越した実行力を模倣することは困難を極める（ルイス・ガースナー）
+- すべての若者達へ：　　**失敗を恐れず，挑戦する実行力**　
+- 優れたアイディアを真似するのは簡単だが，卓越した実行力を模倣することは困難を極める（ルイス・ガースナー）
   
 ####  課題の探求方法
 - 発明好きの発想
@@ -80,9 +80,9 @@
 
 
 ## 研修完遂でGetするスキル
-- 目的・要件⇒デザイン⇒PoC確認まで30分
-- ちょこっとPython: スキマ時間に簡単お手軽プログラミング
-- 「こんなことできるかな？」⇒「**やればできる**実感」
+- 目的・要件⇒デザイン　⇒　PoC確認まで30分
+- 「こんなことできるのかな？」　⇒　「**やればできる**」を実感する
+- ちょこっとPython: スキマ時間に簡単お手軽プログラミング 
 - Holiday Coding:　家族に自慢できるPython使い
 
 -----
@@ -217,7 +217,7 @@ show_local_mp4_video(video_path)
 ```
 6. セル横の再生ボタンで、実行する
     <img src='./img/movie.png' width=80%>
-7. アレンジ：他の楽曲に変えていろいろ楽しむ
+7. アレンジ：他の動画に差し変えていろいろ楽しむ
 
 
 -----
@@ -550,6 +550,69 @@ IPython.display.Image(fig)
 <div style="page-break-before:always"></div>
 
 ## セッション7.  量子テレポーテーションって何？
+
+```python
+!pip install qiskit qiskit-aer
+!pip install qiskit[visualization]
+!pip install --upgrade pylatexenc
+
+# 　一回だけノートブックのカーネルを再起動 　（１回限り）
+import os
+os.kill(os.getpid(), 9)
+```
+
+```python
+from qiskit import QuantumCircuit, QuantumRegister, ClassicalRegister, execute, Aer
+from qiskit.visualization import plot_histogram, plot_bloch_multivector, plot_state_qsphere
+
+# 3量子ビット
+qr = QuantumRegister (3)
+# 2古典ビット
+crz = ClassicalRegister (1)
+crx = ClassicalRegister (1)
+qc = QuantumCircuit (qr, crz, crx)
+
+# アリスが送りたい量子ビットを初期化 （|1>とする）
+qc.x (0)        # |0> ビット反転
+qc.barrier ()
+
+# アリスとボブが共有するベル状態ペア
+# (量子エンタングルメント＝量子もつれ)
+qc.h (1)        #  アダマールゲート:   量子重ね合わせ
+qc.cx (1, 2)    #  CNOT ：　制御NOTE
+qc.barrier ()
+
+# アリスが自分の量子ビットに操作を施す
+qc.cx (0, 1)     #  CNOT ：　制御NOTE
+qc.h (0)         #  アダマールゲート:   量子重ね合わせ
+qc.barrier ()
+
+# アリスが自分の量子ビットを測定
+# 結果を古典レジスタに送る
+qc.measure (0, 0)
+qc.measure (1, 1)
+qc.barrier ()
+
+# ボブが古典レジスタの値に応じて自分の量子ビットを操作 (if文)
+qc.x (2).c_if (crx, 1)  # アリスからの古典通信が01 → Xゲートでビット反転
+qc.z (2).c_if (crz, 1)  # アリスからの古典通信が10 → Zゲートで位相反転
+# アリスからの古典通信が11 → ZゲートZゲート（＝＝Yゲート）でビット位相反転
+# アリスからの古典通信が00 → 何もしなくて，そのままのボブの量子ビットでよい
+
+qc.draw (output='mpl')
+```
+
+<img src='./img/Q-gate.png' width=80%>
+
+```python
+backend = Aer.get_backend('statevector_simulator')
+result = execute(qc, backend).result()
+statevector = result.get_statevector()
+
+plot_bloch_multivector(statevector)
+plot_state_qsphere(statevector)
+```
+<img src='./img/Q-bloch.png' width=80%>
 
 
 -----
