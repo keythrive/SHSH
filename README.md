@@ -620,5 +620,209 @@ plot_state_qsphere(statevector)
 
 ## セッション8.  最適化問題を物理法則で解いてもらう
 
+### 焼きなまし法とパラメタ調整のお話[^1]
+
+
+  カナダのD-Wave Systems社は，量子焼きなまし法の計算原理を導入したアニーリングマシンD-Waveを開発した企業として有名です[^1].
+  ここでは，D-Wave社が提供する焼きなまし法のPythonパッケージ```D-Wave Neal```を活用して，最適化問題の求解事例を紹介します．
+　続いて，制約条件に違反するペナルティ項の重みパラメータをチューニングすることで，求解の精度を改善する手法を示します．
+[^2]:D-Wave Systems(https://ja.wikipedia.org/wiki/D-Wave_Systems)
+
+#### シミュレーテッドアニーリング（焼きなまし法）とは
+　
+　"刀鍛冶の里"において:wink:，灼熱に加熱した"玉鋼(たまはがね)"や鉄を冷却する過程で結晶構造が固く結合していく現象に着想を得て，計算機シミュレーションを用いて，最適化問題の解を求める手法を「焼きなまし法」(シミュレーテッドアニーリング,Simulated Annealing,以下SA法)　と言います．
+　量子焼きなまし（量子アニーリング,Quantum Annealing，以下QA法）は，量子揺らぎや量子トンネル効果をモチーフに，大域的な最適化解を探す手法です. 
+下記は，SA法とQA法の比較表です（参考[^3]）
+
+|比較観点| SA法 | QA法 |
+|:-:|:-:|:-:|
+|探索|統計熱力学的確率| 量子力学的確率|
+|ローカルミニマム脱出| 熱的ゆらぎ | 量子ゆらぎ，量子トンネル効果|
+|難易度| relatively easy| difficult|
+
+[^3]:[擬似アニーリングと量子アニーリング](https://qiita.com/3110atsu1217/items/f74c898c0b669a4fadd7)
+
+
+# 最適化問題における制約条件とペナルティ項
+
+　 焼きなまし法をざっくりと説明すると，「熱エネルギーや運動位置エネルギーが高い状態を不安定（正解が存在する確率小）」，「エネルギーが最も低い状態を安定（正解が存在する確率大）」とみなして，正解を発見するためにエネルギーが低いところを優先探索するプロセスです．
+  エネルギーの高低を物理現象にゆだねて，探索範囲を絞り込む考え方です．
+　したがって目的関数は正解に近づくほど，制約条件を充足するほど低い値をとるように設計します．逆に，制約違反するケースは高いエネルギー値をペナルティ（罰則）として与えます．
+　大域的な最適解を得るために温度を徐々に下げながら局所的な最適解（ローカルミニマム）に陥らないように確率的に探索を行います.
+
+　目的関数と制約条件の関数は，最終的に一つのエネルギー関数に統合するため，それぞれの制約条件（違反）にどれくらいのペナルティを与えるか？重みバランスを調整する必要があります．
+　通常，この重みバランス調整は，プログラミングと実行評価を繰り返しながら，問題の設計者やプログラマの手作業で実行します．
+　当然ながら，制約条件の項目数が増えるほど，重みパラメタの調整は複雑です．いわゆる，ランダムサーチやグリッドサーチといった手法で数多くのパラメタの組合せで求解を評価するのも大変な作業です．そこで，手作業に代えてコンピュータ・プログラム自身にハイパーパラメタ調整作業を任せる手法を適用します．具体的には，OptunaというPythonライブラリを活用します．Optunaの詳しい説明は参考[^4] [^5]を御覧ください．
+
+[^4]: [An open source hyperparameter optimization framework to automate hyperparameter search](https://optuna.org/)
+
+[^5]: [機械学習エンジニアのためのTransformers, 最先端の自然言語処理ライブラリによるモデル開発](https://www.oreilly.co.jp/books/9784873119953/)
+
+
+# SA法とハイパーパラメタチューニング
+
+- D-Wave neal (https://docs.ocean.dwavesys.com/projects/neal/en/latest/) 
+
+  ```
+    !python3 -V
+    !pip --version
+    !pip list | grep neal
+    !pip list | grep optuna
+  ```
+  
+  ```
+    Python 3.8.13
+    pip 23.3.1 
+    dwave-neal                    0.5.9
+    optuna                        3.4.0
+  ```
+  
+- 動作検証環境の確認
+
+```python
+import neal
+import pyqubo
+import optuna
+
+# N-Queen問題の設計
+# A,B,Cがペナルティ項への重みパラメタ
+def problem(N,A,B,C):    
+    rN = range(N)
+    
+    x = pyqubo.Array.create('x', shape=(N, N), vartype='BINARY')    
+ 
+    # 行の制約条件:  * A
+    constraint_rows = sum(
+        [ (sum(x[i, j] for j in rN) - 1)**2 for i in rN ]
+    )
+    # 列の制約条件:  * B
+    constraint_cols = sum(
+        [ (sum(x[i, j] for i in rN) - 1)**2 for j in rN ]
+    )
+    # 対角線の制約条件(1)
+    constraint_diag = sum(
+        [ (sum(x[i, j] for i in rN for j in rN if i+j == k) - 1)**2 
+           for k in range(2*N-1) ] 
+    )
+    # + 対角線の制約条件(2)
+    #      ( (1) + (2) ) * C
+    constraint_diag += sum(
+        [ (sum(x[i, j] for i in rN for j in rN if i-j == k) - 1)**2
+             for k in range(1- N, N) ]
+    )
+    #  制約条件の合成 =>　最小値を探す問題    
+    H = A * constraint_rows + B * constraint_cols + C * constraint_diag 
+    model = H.compile()
+    qubo, offset = model.to_qubo()   
+    return qubo, offset
+
+# 求解
+def solve(qubo,times=100):
+    sampler = neal.SimulatedAnnealingSampler()
+    result = sampler.sample_qubo(qubo,num_reads=times)
+    solution = result.first.sample       
+    return solution
+
+# 求解結果の表示
+def print_q(sols,N):
+    def elm(s):
+        return 'Q ' if s==1 else '_ '
+    board = ''
+    rN = range(N)
+    for i in rN:
+        for j in rN:
+            board += elm(sols[f'x[{i}][{j}]'])
+        board += '\n'
+    print(board)
+
+# 求解結果の検証，制約条件を満たしたか？を数値で答える
+def calc_penalty(sol, qubo):
+    penalty = [ val * sol[i] * sol[j]
+                   for (i, j), val in qubo.items() ]
+    return sum(penalty)
+
+# 重み係数A,B,Cを与えて求解評価
+def trial(A,B,C,N=8,out=False):
+    Q,offset = problem(N,A,B,C)
+    sol = solve(Q)
+    if out:
+        print_q(sol,N)
+    return(calc_penalty(sol,Q))
+
+# # A,B,Cの適切な重みバランスで，パラメタチューニング
+def tune(score,n_trials=10):
+    def objective(trial):
+        A = trial.suggest_float('A', 0.9, 1.2)
+        B = trial.suggest_float('B', 0.9, 1.2)
+        C = trial.suggest_float('C', 0.8, 0.9)
+        return score(A,B,C,out=False)
+    
+    study = optuna.create_study()    
+    study.optimize(objective, n_trials=n_trials,n_jobs=2,show_progress_bar=False)
+    print(f'Best params:{study.best_params} => Best values:{study.best_value}')
+    return study.best_params
+
+if __name__=='__main__':
+    bp = tune(trial)　
+    # ベストなパラメタで求解評価
+    A,B,C = bp['A'],bp['B'],bp['C']
+    trial(A,B,C,N=24,out=True)
+```
+
+#### 出力結果の一例　（N＝8，　trial＝3０回）
+
+```
+[I 2023-12-11 03:52:41,920] Trial 28 finished with value: -32.927880681573406 and parameters: {'A': 1.1550876014852884, 'B': 1.1780997833887736, 'C': 0.8913988501613064}. Best is trial 25 with value: -33.518692834018935.
+[I 2023-12-11 03:52:41,941] Trial 29 finished with value: -32.63961820738401 and parameters: {'A': 1.1204543795527726, 'B': 1.1753860344131433, 'C': 0.8920559309785426}. Best is trial 25 with value: -33.518692834018935.
+Best params:{'A': 1.1976523005710686, 'B': 1.1974676367562087, 'C': 0.8973583334625448} => Best values:-33.518692834018935
+_ _ Q _ _ _ _ _ 
+_ _ _ _ _ Q _ _ 
+_ Q _ _ _ _ _ _ 
+_ _ _ _ _ _ Q _ 
+Q _ _ _ _ _ _ _ 
+_ _ _ Q _ _ _ _ 
+_ _ _ _ _ _ _ Q 
+_ _ _ _ Q _ _ _ 
+```
+
+#### 出力結果の一例　（N＝２４，　trial＝１０回）
+
+```
+[I 2023-12-10 21:11:11,672] Trial 7 finished with value: -30.543440680477346 and parameters: {'A': 1.0097572501119707, 'B': 1.170226919130268, 'C': 0.8189729579087147}. Best is trial 1 with value: -32.37165960385969.
+[I 2023-12-10 21:11:11,796] Trial 8 finished with value: -31.160294185948207 and parameters: {'A': 0.9907434026003465, 'B': 1.1639500849709838, 'C': 0.8701716428360979}. Best is trial 1 with value: -32.37165960385969.
+[I 2023-12-10 21:11:11,809] Trial 9 finished with value: -31.879515567617112 and parameters: {'A': 1.083048922646875, 'B': 1.14289295460516, 'C': 0.8794987843500518}. Best is trial 1 with value: -32.37165960385969.
+Best params:{'A': 1.1433867723692346, 'B': 1.121662295356157, 'C': 0.8907041913785347} => Best values:-32.37165960385969
+_ _ _ _ _ _ _ _ _ Q _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ Q _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ Q _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ Q _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ Q _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ Q _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ Q _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ Q _ 
+_ _ _ _ _ _ Q _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ Q _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ Q _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ Q _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ Q _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ Q _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ Q _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+Q _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ Q _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ Q 
+_ Q _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ Q _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ Q _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ Q _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ Q _ _ _ _ _ _ _ _ _ _ _ _ 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ Q _ _ _ _ 
+
+```
+
+　D-Wave社が提供する焼きなまし法のPythonパッケージ```D-Wave Neal```を活用して，最適化問題の求解事例を紹介しました．あわせて，制約条件に違反するペナルティ項の重みパラメータをチューニングすることで，求解の精度を調整する手法とプロセスを示しました.
+```D-Wave Neal```におけるSimulated Annealing Samplerは，近似的なボルツマンサンプリングやヒューリスティック最適化に使えるサンプラーで，より高度な応用が期待できると考えます.
+
+[^1]:焼きなまし法とパラメタ調整(https://qiita.com/khrive/items/b8e0da331c0c659cb000)
+
 -----
 <div style="page-break-before:always"></div>
