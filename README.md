@@ -235,29 +235,41 @@ show_local_mp4_video(video_path)
 
 1.  下記のコードを入力して実行
 
+```
+pip install xmltodict folium
+```
 ```python
-address = '新潟県新発田市豊町3丁目7-6'
-latitude, longitude =  37.939535, 139.33648
-# address = "新潟県新潟市中央区米山3-1-53"  
-# latitude, longitude = 37.9136367, 139.0572378
-
-from geopy.geocoders import Nominatim
+import requests
+import xmltodict
 import folium
-geolocator = Nominatim(user_agent="my-app")
 
-location = geolocator.geocode(address)
-if location is None:
-    print("住所が見つかりませんでした。")
-else:
-    latitude = location.latitude
-    longitude = location.longitude
-    print(f"住所：{address} 緯度：{latitude} 経度：{longitude}")
+GeospatialUrl = "http://geocode.csis.u-tokyo.ac.jp/cgi-bin/simple_geocode.cgi?output=json&addr="
 
-niigata_lat = 37.916192
-niigata_lon = 139.036413
-map = folium.Map(location=[niigata_lat, niigata_lon], zoom_start=12)
-folium.Marker([latitude, longitude], popup=address).add_to(map)
-map
+def address2geo(address):
+  lat,lng = 0,0
+  s_quote = requests.utils.quote(address)
+  response = requests.get(GeospatialUrl + s_quote)
+  if response.status_code == 200:
+     json_data = xmltodict.parse(response.text)
+     data = dict(json_data)
+     result = data['results']
+     lat = result["candidate"]['latitude']
+     lng = result["candidate"]['longitude']
+  else:
+     print(f"Error: {response.status_code}")
+  return lat,lng
+
+def test_map(scale=10):
+  niigata = [37.916192,139.036413]
+  address_list = ["新潟県新潟市中央区米山3-1-53", "新潟県新発田市豊町3丁目7-6"]
+
+  for a in address_list:
+     map = folium.Map(location=niigata, zoom_start=scale)
+     lat,lng = address2geo(a)
+     folium.Marker([lat,lng], popup=a).add_to(map)
+  return map
+
+test_map(11)
 ```
 <img src='./img/map-location.png' width=100%>
 
