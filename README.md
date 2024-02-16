@@ -12,29 +12,20 @@
 </center>
 
 -----
-## 目次 <!-- omit in toc -->
+## 目次 <!-- omit in toc -->- [高校生の課題探求型学習に向けて](#高校生の課題探求型学習に向けて)
 - [高校生の課題探求型学習に向けて](#高校生の課題探求型学習に向けて)
   - [課題探求型の重要性](#課題探求型の重要性)
-      - [現状に満足せず、妥協しない、成長と挑戦の源泉](#現状に満足せず妥協しない成長と挑戦の源泉)
-      - [探求の効能](#探求の効能)
-      - [課題の探求方法](#課題の探求方法)
-      - [課題探求に必要な資質](#課題探求に必要な資質)
   - [本研修の概要](#本研修の概要)
-  - [研修完遂でGetするスキル](#研修完遂でgetするスキル)
+  - [獲得するスキル](#獲得するスキル)
   - [演習内容](#演習内容)
   - [事前準備](#事前準備)
-  - [予習、自主トレーニング](#予習自主トレーニング)
-  - [セッション0.  Pythonでクラシック音楽](#セッション0--pythonでクラシック音楽)
-  - [セッション1.  Pythonで動画再生](#セッション1--pythonで動画再生)
+  - [予習、自主トレ](#予習自主トレ)
+  - [セッション0.  Pythonでクラシック音楽・動画再生](#セッション0--pythonでクラシック音楽動画再生)
+  - [セッション1.  Colabで The Laughing Man](#セッション1--colabで-the-laughing-man)
   - [セッション2.  現在地の近傍地図](#セッション2--現在地の近傍地図)
   - [セッション3.  球の体積、モンテカルロ法](#セッション3--球の体積モンテカルロ法)
   - [セッション4.  Pythonで 3Dグラフ表示](#セッション4--pythonで-3dグラフ表示)
-  - [セッション5.  WordClowd ワードクラウド](#セッション5--wordclowd-ワードクラウド)
-      - [源氏物語](#源氏物語)
-      - [枕草子](#枕草子)
-      - [三国志](#三国志)
-      - [三四郎](#三四郎)
-      - [月に吠える](#月に吠える)
+  - [セッション5.  WordCloud ワードクラウド](#セッション5--wordcloud-ワードクラウド)
   - [セッション6.  稀少データは自分で作る（MCMC）](#セッション6--稀少データは自分で作るmcmc)
   - [セッション7.  量子テレポーテーションって何？](#セッション7--量子テレポーテーションって何)
   - [セッション8.  最適化問題を物理法則で解いてもらう](#セッション8--最適化問題を物理法則で解いてもらう)
@@ -45,22 +36,22 @@
 # 高校生の課題探求型学習に向けて
 
 ## 課題探求型の重要性
-#### 現状に満足せず、妥協しない、成長と挑戦の源泉
+#### 現状に満足せず、妥協しない、成長と挑戦の源泉  <!-- omit in toc -->
 - 問題解決、よりも、**問題発見**が難しい
 - 金鉱採掘、よりも、**金脈発見**が難しい
-- 仕事をこなす/探す、よりも、**雇用をつくる**ことは難しい
+- 仕事をこなす/探す、よりも、**雇用をつくる**ことが難しい
 
-####  探求の効能
+####  探求の効能  <!-- omit in toc -->
 - **能動アウトプット型の自己成長**　：　受動インプット教育よりはるかに高い教育効果
 - すべての若者達へ：　　**失敗を恐れず，挑戦する実行力**　
 - 優れたアイディアを真似するのは簡単だが，卓越した実行力を模倣することは困難を極める（ルイス・ガースナー）
   
-####  課題の探求方法
+####  課題の探求方法 <!-- omit in toc -->
 - 発明好きの発想
 - 好奇心と観察
 - 多様な視点,　異文化融合
 
-####  課題探求に必要な資質
+####  課題探求に必要な資質 <!-- omit in toc -->
 - 面白い！不思議！と思う感受性
 - 困っている人を助ける視点
 - 知らないことを知りたい、と思う知識欲
@@ -78,8 +69,7 @@
 - インターネット接続されたPC、Webブラウザの対話作業
 - 高校生の探究活動へ展開・応用
 
-
-## 研修完遂でGetするスキル
+## 獲得するスキル
 - 目的・要件⇒デザイン　⇒　PoC確認まで30分
 - 「こんなことできるのかな？」　⇒　「**やればできる**」を実感する
 - ちょこっとPython: スキマ時間に簡単お手軽プログラミング 
@@ -99,8 +89,8 @@
 
 ||学習項目|概要、方法|
 |-|-|-|
-|0|Pythonでクラシック音楽|クラウド環境でPython実行、Webで音楽再生|
-|1|Pythonで動画再生|同上、Webで動画再生|
+|0|Pythonでクラシック音楽、動画再生|クラウド環境でPython実行しWebで音楽・動画再生|
+|1|姿勢推定／顔の中心位置検出|Colabで **The Laughing Man2024/02**|
 |2|地図と現在地|現在地点の拡大縮小可能な地図を表示|
 |3|3D表現|3D空間にランダムな点描画で球を表現、球の体積を試算<br>3Dプリンタの積層方式で図形を立体化|
 |4|WordCloud|（国語、英語の先生向け）テキストで頻出する単語を視覚表現|
@@ -118,42 +108,44 @@
 |:-:|-|-|:-:|
 |0|Googleアカウント取得|gmailサインアップ・サインイン|✓|
 |1|Microsoftアカウント取得|Windows10 ログイン|✓|
-|2|WebブラウザEdge起動||✓|
+|2|WebブラウザEdge起動|ブラウザ画面を4つほど利用予定|✓|
 |3|Google Colaboratoryログイン|https://colab.research.google.com/?hl=ja|✓|
 |4|新規ノートブック作成|基本操作を試す|✓|
 |5|Microsoft Bing AI画面表示|Copilotに質問、基本操作を試す|✓|
-|6|基本動作確認（A）|Githubから講義用ファイルをDownloadして、いくつか試す|✓|
-|7|基本動作確認（B）|||
-|8|Pythonパッケージの事前インストール|（下記参照）||
+|6|基本動作確認 | https://github.com/keythrive/SHSH/notebooks/ から講義用ファイルをDownloadして試す|✓|
+|7|Pythonパッケージの事前インストール|（Colaboratoryで実行いただくPythonパッケージの事前インストール設定作業）||
 
-- 演習のチョイスにもよりますが、可能であれば事前に下記を実行できていると
-スムーズに演習に入れると思いますが、講義ノートとともにJupyterファイルを事前にダウンロードできるよう考えております
+- 演習のチョイスによりますが、下記を事前に実行済状態であればスムーズに演習に入れると思います
+- 下記URLから、講義ノートとJupyterファイルを事前にダウンロードしてください:
+
+    https://github.com/keythrive/SHSH/notebooks/
+
+- Colaboratoryで実行いただくPythonパッケージの事前インストール設定作業：
 
 ```
 !pip install geopy folium plotly
+!pip install xmltodict 
 
 !apt install aptitude
 !aptitude install git make curl xz-utils file -y
 !aptitude install mecab libmecab-dev mecab-ipadic-utf8 -y
 !apt-get -y install fonts-ipafont-gothic
 !pip3 install mecab-python3==0.7
-
 ```
 
-## 予習、自主トレーニング
-- 必要に応じて、
-- Python学習環境　PyWeb集合学習、チュートリアルなど、
-- 事前にざっと目を通し、予習やお試しを進めておく：
--     https://pyweb.ayax.jp/PyWeb.html#pywebver
+## 予習、自主トレ
+- 必要に応じてPython学習環境,たとえばPyWeb集合学習、チュートリアルなど、  https://pyweb.ayax.jp/PyWeb.html#pywebver
+
+- 事前にざっと目を通し、予習やお試しを進めておく
 
 -----
 <div style="page-break-before:always"></div>
 
-## セッション0.  Pythonでクラシック音楽
+## セッション0.  Pythonでクラシック音楽・動画再生
 
-    [ToDo] 
-    　クラウド環境でPythonプログラムを作成し実行する. 
-    　PCのWebブラウザでクラシック音楽が再生する
+    【実施すること】 
+    　・クラウド環境でPythonプログラムを作成し実行 
+    　・PCのWebブラウザでクラシック音楽が再生
 
 1.   クラシック音楽ファイルを用意する：
   (例)  著作権フリーのクラシック音楽サイト: 
@@ -179,14 +171,12 @@ IPython.display.Audio(music_path)
     <img src='./img/music-play.png' width=70%>
 8. アレンジ：他の楽曲に変え、自由に楽しむ
 
------
-<div style="page-break-before:always"></div>
-
-## セッション1.  Pythonで動画再生
-
-    [ToDo] 
-    　クラウド環境でPythonプログラムを作成し実行する. 
-    　PCのWebブラウザで動画再生する
+------
+```
+    【実施すること】
+    　・クラウド環境でPythonプログラムを作成し実行 
+    　・PCのWebブラウザで動画再生
+```
 
 0.   動画ファイルを用意する：
   (例)  著作権フリーでダウンロード可能な動画ファイル: 
@@ -223,21 +213,128 @@ show_local_mp4_video(video_path)
 -----
 <div style="page-break-before:always"></div>
 
+## セッション1.  Colabで The Laughing Man
+
+    【実施すること】　深層機械学習（ディープラーニング）
+    　・Webカメラ動画から、人の姿勢推定し顔の中心（鼻）を位置検出
+
+　　デモ実演： Colabで **The Laughing Man2024/02**|
+    2024/2　The Laughing Man (笑い男事件発生)
+    https://thelaughingman2024.jp/
+
+```python
+import requests
+from IPython.display import HTML, display
+from google.colab import files
+
+html = '''
+<!DOCTYPE HTML>
+<html><head>
+  <meta charset="UTF-8">
+  <title>PoseNet example using p5.js</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.3.1/p5.min.js" crossorigin=""></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.3.1/addons/p5.dom.min.js" crossorigin=""></script>
+  <script src="https://unpkg.com/ml5@latest" type="text/javascript" crossorigin=""></script>
+
+</head>
+<body>
+  <h2>2024/2　The Laughing Man 事件発生</h2>
+  <hr>
+  <!-- <p id="status">Loading model...</p>
+       <button onclick="setup()">起動</button>  -->
+<script>
+let video;
+let poseNet;
+let poses = [];
+let icon;
+let iconSize = 120;
+
+function setup() {
+  createCanvas(480, 360);
+
+  video = createCapture(VIDEO);
+  video.size(width, height);
+ 　　// url = "https://thelaughingman2024.jp/assets/img/img_mark_04.gif";
+  url = "./img_mark_04.gif";
+
+  icon = loadImage(url);
+  poseNet = ml5.poseNet(video, modelReady);
+  poseNet.on('pose', function(results) {
+    poses = results;
+  });
+
+  video.hide();
+}
+
+function modelReady() {
+}
+
+function drawIcon() {
+  for (let i = 0; i < poses.length; i++) {
+    let pose = poses[i].pose;
+    let nose = pose.keypoints[0];
+    if (nose.score > 0.2) {
+      let x = nose.position.x;
+      let y = nose.position.y;
+      let ix = x - iconSize / 2;
+      let iy = y - iconSize / 2;
+      ix = constrain(ix, 0, width - iconSize);
+      iy = constrain(iy, 0, height - iconSize);
+      image(icon, ix, iy, iconSize, iconSize);
+    }
+  }
+}
+
+function draw() {
+  image(video, 0, 0, width, height);
+  drawIcon();
+}
+
+</script>
+</body></html>
+'''
+# display(HTML(html))
+
+with open('index.html', 'w') as f:
+  f.write(html)
+files.download('index.html')
+
+url = "https://thelaughingman2024.jp/assets/img/img_mark_04.gif";
+response = requests.get(url)
+save_name = "img_mark_04.gif"
+file = open(save_name, "wb")
+
+for chunk in response.iter_content(100000):
+    file.write(chunk)
+file.close()
+files.download(save_name)
+
+port,path = 8000,''
+```
+
+```
+!nohup python3 -m http.server $port > server.log 2>&1 &
+
+google.colab.output.serve_kernel_port_as_iframe(port, path=path)
+```
+<img src='./img/laughing.png' width=70%>
+
+
+-----
+<div style="page-break-before:always"></div>
+
 ## セッション2.  現在地の近傍地図
-    [ToDo] クラウド環境でPythonプログラムを実行し、
-     - Webブラウザ上に、現在地近傍の地図を表示する：
-     - 拡大縮小可能な地図で、簡単な道案内、ナビに利用できる
+    【実施すること】クラウド環境Pythonプログラムを実行し、
+     - Webブラウザ上に、現在地近傍の地図を表示
+     - 拡大縮小可能な地図で簡単な道案内、ナビに利用できる
      - 住所から緯度経度の取得に失敗する場合、予めWebサイトで緯度経度を求めておく
 
-0. 緯度経度、地図表示に必要なPythonパッケージをインストールする
+1. 地図表示に必要なPythonパッケージをインストール
    
-``` !pip install geopy folium ```
+``` !pip install geopy folium xmltodict ```
 
-1.  下記のコードを入力して実行
+2.  下記のコードを入力して実行
 
-```
-pip install xmltodict folium
-```
 ```python
 import requests
 import xmltodict
@@ -273,16 +370,18 @@ test_map(11)
 ```
 <img src='./img/map-location.png' width=100%>
 
+
 -----
 <div style="page-break-before:always"></div>
 
 ## セッション3.  球の体積、モンテカルロ法
 
-    [ToDo] 
-    　3D空間にランダムな点描画で球を表現、
-    　球の体積を試算：　モンテカルロ法の重要性を確認
+    【実施すること】
+    　・3D空間にランダムな点描画で球を表現
+    　・球の体積を試算
+    　・モンテカルロ法の重要性を確認
 
-5.  下記のコードを入力、
+1.  下記コード入力
    
 ```python
 import numpy as np
@@ -311,7 +410,7 @@ plt.show()
 <img src='./img/sphere.png' width=60%>
 
 
-6. グラフィクスを plotlyに変え、視点をマウス操作で変えられる
+2. グラフィクスを plotlyに変え、視点をマウス操作で変えられる
 
 ```python
 import numpy as np
@@ -334,7 +433,7 @@ fig.show()
 
 ```
 ```
-  モンテカルロ法試算結果：　球の体積の近似値：4.1912
+   モンテカルロ法試算結果：　球の体積の近似値：4.1912
 ```
 <img src='./img/MC-sphere.png' width=100%>
 
@@ -342,6 +441,38 @@ fig.show()
 import math
 math.pi *4/3　# 理論値:  4.1887902047863905
 ```
+
+import requests
+import xmltodict
+import folium
+
+GeospatialUrl = "http://geocode.csis.u-tokyo.ac.jp/cgi-bin/simple_geocode.cgi?output=json&addr="
+
+def address2geo(address):
+  lat,lng = 0,0
+  s_quote = requests.utils.quote(address)
+  response = requests.get(GeospatialUrl + s_quote)
+  if response.status_code == 200:
+     json_data = xmltodict.parse(response.text)
+     data = dict(json_data)
+     result = data['results']
+     lat = result["candidate"]['latitude']
+     lng = result["candidate"]['longitude']
+  else:
+     print(f"Error: {response.status_code}")
+  return lat,lng
+
+def test_map(scale=10):
+  niigata = [37.916192,139.036413]
+  address_list = ["新潟県新潟市中央区米山3-1-53", "新潟県新発田市豊町3丁目7-6"]
+
+  for a in address_list:
+     map = folium.Map(location=niigata, zoom_start=scale)
+     lat,lng = address2geo(a)
+     folium.Marker([lat,lng], popup=a).add_to(map)
+  return map
+
+test_map(11)
 
 
 -----
@@ -397,7 +528,6 @@ fig.show()
 ```
 <img src='./img/3D-plotly-heart.png' width=70%>
 
-
 -----
 <div style="page-break-before:always"></div>
 
@@ -406,19 +536,19 @@ fig.show()
      - テキストで頻出する単語を視覚表現する、例えば・・・
      - 源氏物語、枕草子、三四郎、三国志、現代訳論語...の頻出単語
 
-#### 源氏物語
+#### 源氏物語 <!-- omit in toc -->
 <img src='./img/wc-源氏物語.png' width=50%>
 
-#### 枕草子
+#### 枕草子 <!-- omit in toc -->
 <img src='./img/wc-枕草子-wikipedia.png' width=50%>
 
-#### 三国志
+#### 三国志 <!-- omit in toc -->
 <img src='./img/wc-三国志.png' width=50%>
 
-#### 三四郎
+#### 三四郎 <!-- omit in toc -->
 <img src='./img/wc-三四郎.png' width=50%>
 
-#### 月に吠える
+#### 月に吠える <!-- omit in toc -->
 <img src='./img/wc-月に吠える.png' width=50%>
 
 - 事前準備、各種パッケージインストール
@@ -432,117 +562,103 @@ fig.show()
 ```
 
 ```python
-from collections import defaultdict
-import re,io
+import os.path
+import glob
+import re
+import pandas as pd
+import zipfile
 import urllib.request
-from zipfile import ZipFile
-from wordcloud import WordCloud
 import IPython
+from IPython.display import Image, display
+from sklearn.feature_extraction.text import TfidfVectorizer
+from wordcloud import WordCloud
+import MeCab
 
 fpath = '/usr/share/fonts/opentype/ipafont-gothic/ipagp.ttf'
-wc = WordCloud(background_color='white',width=640,height=480,font_path=fpath)
+wc = WordCloud(background_color='ivory',width=480,height=360,font_path=fpath)
 
-import MeCab
-sentense = '花の色は移りにけりないたずらにわがみよにふる眺めせしまに'
-m = MeCab.Tagger()
-m.parse(sentense)
+def download(URL):
+    zip_file = re.split(r'/', URL)[-1]
+    urllib.request.urlretrieve(URL, zip_file)
+    dir = os.path.splitext(zip_file)[0]
+    with zipfile.ZipFile(zip_file) as zip_object:
+        zip_object.extractall(dir)
+    os.remove(zip_file)
+    path = os.path.join(dir,'*.txt')
+    list = glob.glob(path)
+    return list[0]
 
-def show_top(N,txt):
-    dic = defaultdict(int)
-    m = MeCab.Tagger()
-    node = m.parseToNode(txt)
-    while node:
-        key = node.surface
-        a = node.feature.split(',')
-        if a[0]==u'名詞' and a[1]==u'一般' and key != '':
-            dic[key] += 1
-        node = node.next
-    for k,v in sorted(dic.items(),key=lambda x:-x[1])[0:N]:
-        print(k + ':' + str(v))
-
-def get_words(txt):
-    m = MeCab.Tagger()
-    node = m.parseToNode(txt)
-    w = ''
-    while node:
-        a = node.feature.split(',')
-        if a[0]==u'名詞' and a[1]==u'一般':
-            w += node.surface + ' '
-        node = node.next
-    return w
-
-def load_from_url(url):
-    data = urllib.request.urlopen(url).read()
-    zipdata = ZipFile(io.BytesIO(data))
-    filename = zipdata.namelist()[0]
-    txt = zipdata.read(filename).decode('shift-jis')
-    txt = re.sub(r' [.*?]','',txt)
-    txt = re.sub(r' <.*?>','',txt)
-    return txt
-
-def process(URLs):
-    for u in URLs:
-        txt = load_from_url(u)
-        title = txt.split()[0]
-        print(f'TITLE={title}\n')   # print(f'Text={txt}\n')
-        words = get_words(txt)
-        wc.generate(words)
-        fig = f'wc-{title}.png'
-        wc.to_file(fig)
-        IPython.display.Image(fig)
-URLs = [
-    'https://www.aozora.gr.jp/cards/000052/files/5016_ruby_9746.zip',  # 紫式部　源氏物語
-    'https://www.aozora.gr.jp/cards/001562/files/52409_ruby_51058.zip', # 三国志　吉川英治
-    'https://www.aozora.gr.jp/cards/001097/files/43785_ruby_58793.zip', # 現代訳論語
-    'https://www.aozora.gr.jp/cards/000148/files/794_ruby_4237.zip', # 三四郎
-    'https://www.aozora.gr.jp/cards/000067/files/859_ruby_21655.zip',  # 月に吠える　萩原朔太郎
-]
-process(URLs)
-
-from bs4 import BeautifulSoup
-import requests
-def get_html(url):
-    response = requests.get(url)
-    if response.status_code == 200:
-        return response.text
-    else:
-        return f"Error: {response.status_code}"
-def extract_japanese_text(html):
-    soup = BeautifulSoup(html, "html.parser")
-    text = soup.get_text()
-    text = "".join([c for c in text if ord(c) >= 0x3000 and ord(c) <= 0x9FFF])
+def convert(download_text):
+    data = open(download_text, 'rb').read()
+    text = data.decode('shift_jis')
+    text = re.split(r'\-{5,}', text)[2]
+    text = re.split(r'底本：', text)[0]
+    text = re.split(r'［＃改ページ］', text)[0]
+    text = re.sub(r'《.+?》', '', text)
+    text = re.sub(r'［＃.+?］', '', text)
+    text = re.sub(r'｜', '', text)
+    text = re.sub(r'\r\n', '', text)
+    text = re.sub(r'\u3000', '', text)
+    text = re.sub(r'「', '', text)
+    text = re.sub(r'」', '', text)
+    text = re.sub(r'、', '', text)
+    text = re.sub(r'。', '', text)
     return text
 
-title = 'Python-wikipedia'
-url = 'https://ja.wikipedia.org/wiki/Python'
-html = get_html(url)
-text = extract_japanese_text(html)
-print(text)
+def extract(text):
+    words = []
+    tagger = MeCab.Tagger('-Ochasen')
+    tagger.parse('')
+    node = tagger.parseToNode(text)
+    while node:
+        if node.feature.split(',')[0] == u'名詞':
+            words.append(node.surface)
+        node = node.next
+    text_result = ' '.join(words)
+    return text_result
 
-title = '枕草子-wikipedia'
-url = 'https://bungobungo.jp/text/hakbn/'
-html = get_html(url)
-text = extract_japanese_text(html)
-print(text)
+def tfidf_fig(title,url):
+    download_file = download(url)
+    text = convert(download_file)
+    text = extract(text)
 
-words = get_words(text)
-wc.generate(words)
-fig = f'wc-{title}.png'
-wc.to_file(fig)
-IPython.display.Image(fig)
+    wc.generate(text)
+    fig = f'wc-{title}.png'
+    wc.to_file(fig)
+    # IPython.display.Image(fig)
+    
+    vectorizer = TfidfVectorizer()
+    X = vectorizer.fit_transform([text])
+    values = X.toarray()
+    feature_names = vectorizer.get_feature_names_out()
+    df = pd.DataFrame(values, columns = feature_names, index=[title])
+    for i in df.index:
+       print(df.loc[i].sort_values(ascending=False).head(20))
+    display(df.head())
 
-url = 'https://ja.wikipedia.org/wiki/%E6%BA%90%E6%B0%8F%E7%89%A9%E8%AA%9E'
+    return fig
 
-title = '源氏物語'
-html = get_html(url)
-text = extract_japanese_text(html)
-print(text)
+# 青空文庫のタイトル、ファイルURL
+Books = {
+    '源氏物語' : 'https://www.aozora.gr.jp/cards/000052/files/5016_ruby_9746.zip',
+    '三国志' : 'https://www.aozora.gr.jp/cards/001562/files/52409_ruby_51058.zip',
+    '現代訳論語' : 'https://www.aozora.gr.jp/cards/001097/files/43785_ruby_58793.zip',
+    '吾輩は猫である' : 'https://www.aozora.gr.jp/cards/000148/files/789_ruby_5639.zip',
+    '三四郎' : 'https://www.aozora.gr.jp/cards/000148/files/794_ruby_4237.zip',
+    'こころ' : 'https://www.aozora.gr.jp/cards/000148/files/773_ruby_5968.zip',
+}
 
-words = get_words(text)
-wc.generate(words)
-fig = f'wc-{title}.png'
-wc.to_file(fig)
-IPython.display.Image(fig)
+def main():
+  images = []
+  for k,v in Books.items():
+    images += [(k,tfidf_fig(k,v))]
+
+  for fig in images:
+    print(fig[0])
+    display(Image(fig[1]))
+
+main()
+
 ```
 
 
@@ -632,7 +748,7 @@ plot_state_qsphere(statevector)
 
 ## セッション8.  最適化問題を物理法則で解いてもらう
 
-### 焼きなまし法とパラメタ調整のお話[^1]
+### 焼きなまし法とパラメタ調整のお話[^1]  <!-- omit in toc -->
 
 
   カナダのD-Wave Systems社は，量子焼きなまし法の計算原理を導入したアニーリングマシンD-Waveを開発した企業として有名です[^1].
@@ -640,7 +756,7 @@ plot_state_qsphere(statevector)
 　続いて，制約条件に違反するペナルティ項の重みパラメータをチューニングすることで，求解の精度を改善する手法を示します．
 [^2]:D-Wave Systems(https://ja.wikipedia.org/wiki/D-Wave_Systems)
 
-#### シミュレーテッドアニーリング（焼きなまし法）とは
+#### シミュレーテッドアニーリング（焼きなまし法）とは <!-- omit in toc -->
 　
 　"刀鍛冶の里"において:wink:，灼熱に加熱した"玉鋼(たまはがね)"や鉄を冷却する過程で結晶構造が固く結合していく現象に着想を得て，計算機シミュレーションを用いて，最適化問題の解を求める手法を「焼きなまし法」(シミュレーテッドアニーリング,Simulated Annealing,以下SA法)　と言います．
 　量子焼きなまし（量子アニーリング,Quantum Annealing，以下QA法）は，量子揺らぎや量子トンネル効果をモチーフに，大域的な最適化解を探す手法です. 
@@ -655,7 +771,7 @@ plot_state_qsphere(statevector)
 [^3]:[擬似アニーリングと量子アニーリング](https://qiita.com/3110atsu1217/items/f74c898c0b669a4fadd7)
 
 
-# 最適化問題における制約条件とペナルティ項
+# 最適化問題における制約条件とペナルティ項  <!-- omit in toc -->
 
 　 焼きなまし法をざっくりと説明すると，「熱エネルギーや運動位置エネルギーが高い状態を不安定（正解が存在する確率小）」，「エネルギーが最も低い状態を安定（正解が存在する確率大）」とみなして，正解を発見するためにエネルギーが低いところを優先探索するプロセスです．
   エネルギーの高低を物理現象にゆだねて，探索範囲を絞り込む考え方です．
@@ -671,7 +787,7 @@ plot_state_qsphere(statevector)
 [^5]: [機械学習エンジニアのためのTransformers, 最先端の自然言語処理ライブラリによるモデル開発](https://www.oreilly.co.jp/books/9784873119953/)
 
 
-# SA法とハイパーパラメタチューニング
+# SA法とハイパーパラメタチューニング  <!-- omit in toc -->
 
 - D-Wave neal (https://docs.ocean.dwavesys.com/projects/neal/en/latest/) 
 
@@ -781,7 +897,7 @@ if __name__=='__main__':
     trial(A,B,C,N=24,out=True)
 ```
 
-#### 出力結果の一例　（N＝8，　trial＝3０回）
+#### 出力結果の一例　（N＝8，　trial＝3０回） <!-- omit in toc -->
 
 ```
 [I 2023-12-11 03:52:41,920] Trial 28 finished with value: -32.927880681573406 and parameters: {'A': 1.1550876014852884, 'B': 1.1780997833887736, 'C': 0.8913988501613064}. Best is trial 25 with value: -33.518692834018935.
@@ -797,7 +913,7 @@ _ _ _ _ _ _ _ Q
 _ _ _ _ Q _ _ _ 
 ```
 
-#### 出力結果の一例　（N＝２４，　trial＝１０回）
+#### 出力結果の一例　（N＝２４，　trial＝１０回） <!-- omit in toc -->
 
 ```
 [I 2023-12-10 21:11:11,672] Trial 7 finished with value: -30.543440680477346 and parameters: {'A': 1.0097572501119707, 'B': 1.170226919130268, 'C': 0.8189729579087147}. Best is trial 1 with value: -32.37165960385969.
