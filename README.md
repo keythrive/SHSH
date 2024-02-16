@@ -218,7 +218,8 @@ show_local_mp4_video(video_path)
     【実施すること】　深層機械学習（ディープラーニング）
     　・Webカメラ動画から、人の姿勢推定し顔の中心（鼻）を位置検出
 
-　　デモ実演： Colabで **The Laughing Man2024/02**|
+　　デモ実演： Colabで **The Laughing Man2024/02**
+  
     2024/2　The Laughing Man (笑い男事件発生)
     https://thelaughingman2024.jp/
 
@@ -382,7 +383,14 @@ test_map(11)
     　- モンテカルロ法の意義を確認
     - 確率分布に従うデータ生成へ
 
-理論値は $4*\pi /3$
+球の体積の公式：　　
+$V = \frac{4}{3} \pi  r^3$　
+（r=1 半径１の理論値 V=4.1887902047863905）
+
+```python
+import math
+4 * math.pi / 3　 # 理論値:4.1887902047863905
+```
 
 1.  下記コード入力
    
@@ -413,7 +421,7 @@ plt.show()
 <img src='./img/sphere.png' width=60%>
 
 
-2. グラフィクスを plotlyに変え、視点をマウス操作で変えられる
+2. グラフィクスを plotlyに変更し，　視点をマウス操作で自由に移動
 
 ```python
 import numpy as np
@@ -433,17 +441,11 @@ print(f"球の体積の近似値：　{volume:.4f}")
 fig = px.scatter_3d(x=x, y=y, z=z, color=inside, color_continuous_scale=["lightblue", "darkblue"], opacity=0.5) 
 fig.update_layout(title=f"Monte Carlo method for sphere volume (n={n})", scene=dict(xaxis_title="x", yaxis_title="y", zaxis_title="z"))
 fig.show() 
-
 ```
 ```
    モンテカルロ法試算結果：　球の体積の近似値：4.1912
 ```
 <img src='./img/MC-sphere.png' width=100%>
-
-```python
-import math
-math.pi *4/3　# 理論値:  4.1887902047863905
-```
 
 -----
 <div style="page-break-before:always"></div>
