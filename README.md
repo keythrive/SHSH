@@ -1,4 +1,4 @@
-#### SHSH  Shibata-High-Schools-HandsOn
+#### SHSH  Shibata　High　School　HandsOn
 ------
 
 <center>
@@ -36,22 +36,22 @@
 # 高校生の課題探求型学習に向けて
 
 ## 課題探求型の重要性
-#### 現状に満足せず、妥協しない、成長と挑戦の源泉  <!-- omit in toc -->
+### 現状に満足せず、妥協しない、成長と挑戦の源泉  <!-- omit in toc -->
 - 問題解決、よりも、**問題発見**が難しい
 - 金鉱採掘、よりも、**金脈発見**が難しい
 - 仕事をこなす/探す、よりも、**雇用をつくる**ことが難しい
 
-####  探求の効能  <!-- omit in toc -->
+###  探求の効能  <!-- omit in toc -->
 - **能動アウトプット型の自己成長**　：　受動インプット教育よりはるかに高い教育効果
 - すべての若者達へ：　　**失敗を恐れず，挑戦する実行力**　
 - 優れたアイディアを真似するのは簡単だが，卓越した実行力を模倣することは困難を極める（ルイス・ガースナー）
   
-####  課題の探求方法 <!-- omit in toc -->
+###  課題の探求方法 <!-- omit in toc -->
 - 発明好きの発想
 - 好奇心と観察
 - 多様な視点,　異文化融合
 
-####  課題探求に必要な資質 <!-- omit in toc -->
+###  課題探求に必要な資質 <!-- omit in toc -->
 - 面白い！不思議！と思う感受性
 - 困っている人を助ける視点
 - 知らないことを知りたい、と思う知識欲
@@ -69,9 +69,9 @@
 - インターネット接続されたPC、Webブラウザの対話作業
 - 高校生の探究活動へ展開・応用
 
-## 獲得するスキル
-- 目的・要件⇒デザイン　⇒　PoC確認まで30分
+## 獲得スキル
 - 「こんなことできるのかな？」　⇒　「**やればできる**」を実感する
+- 目的・要件⇒デザイン　⇒　PoC確認まで30分
 - ちょこっとPython: スキマ時間に簡単お手軽プログラミング 
 - Holiday Coding:　家族に自慢できるPython使い
 
@@ -93,14 +93,13 @@
 |1|姿勢推定／顔の中心位置検出|Colabで **The Laughing Man2024/02**|
 |2|地図と現在地|現在地点の拡大縮小可能な地図を表示|
 |3|3D表現|3D空間にランダムな点描画で球を表現、球の体積を試算<br>3Dプリンタの積層方式で図形を立体化|
-|4|WordCloud|（国語、英語の先生向け）テキストで頻出する単語を視覚表現|
+|4|WordCloud|（国語、英語の先生向け）<br>テキストで頻出する単語を視覚表現|
 |5|データ分析・データ生成|神は確率でデータを創造する|
 |6|量子ゲート|量子テレポーテーションって何？|
-|7|最適化問題の量子的求解|ポートフォリオ最適化,8-Queen,数独パズル|
+|7|最適化問題の量子的求解|8-Queen|
 
 -----
 <div style="page-break-before:always"></div>
-
 
 ## 事前準備
 
@@ -116,9 +115,9 @@
 |7|Pythonパッケージの事前インストール|（Colaboratoryで実行いただくPythonパッケージの事前インストール設定作業）||
 
 - 演習のチョイスによりますが、下記を事前に実行済状態であればスムーズに演習に入れると思います
-- 下記URLから、講義ノートとJupyterファイルを事前にダウンロードしてください:
+- 下記URLからJupyterファイルをダウンロード:
 
-    https://github.com/keythrive/SHSH/notebooks/
+  　　https://github.com/keythrive/SHSH/tree/main/notebooks
 
 - Colaboratoryで実行いただくPythonパッケージの事前インストール設定作業：
 
@@ -136,7 +135,7 @@
 ## 予習、自主トレ
 - 必要に応じてPython学習環境,たとえばPyWeb集合学習、チュートリアルなど、  https://pyweb.ayax.jp/PyWeb.html#pywebver
 
-- 事前にざっと目を通し、予習やお試しを進めておく
+- 事前にざっと目を通し、予習やお試しを進めておくとよいでしょう
 
 -----
 <div style="page-break-before:always"></div>
@@ -186,7 +185,7 @@ IPython.display.Audio(music_path)
 2.  セッション1の続きで、新規セルの追加
 3.  動画ファイルをアップロード
 4.  動画ファイルのpath  (/content/galaxy.mp3)を取得、設定
-5.  下記のコードを入力、
+5.  下記のコードを入力し、
 
 ```Python
 import io, base64
@@ -207,7 +206,7 @@ show_local_mp4_video(video_path)
 ```
 6. セル横の再生ボタンで、実行する
     <img src='./img/movie.png' width=80%>
-7. アレンジ：他の動画に差し変えていろいろ楽しむ
+7. アレンジ：　他の動画に差し変えていろいろ楽しむ
 
 
 -----
@@ -318,14 +317,14 @@ port,path = 8000,''
 
 google.colab.output.serve_kernel_port_as_iframe(port, path=path)
 ```
-<img src='./img/laughing.png' width=50%>
+<img src='./img/laughing.png' width=40%>
 
 
 -----
 <div style="page-break-before:always"></div>
 
 ## セッション2.  現在地の近傍地図
-    【実施すること】クラウド環境Pythonプログラムを実行し、
+    【実施すること】　クラウド環境Pythonプログラムを実行し、
      - Webブラウザ上に、現在地近傍の地図を表示
      - 拡大縮小可能な地図で簡単な道案内、ナビに利用できる
      - 住所から緯度経度の取得に失敗する場合、予めWebサイトで緯度経度を求めておく
@@ -369,7 +368,7 @@ def test_map(scale=10):
 
 test_map(11)
 ```
-<img src='./img/map-location.png' width=100%>
+<img src='./img/map-location.png' width=90%>
 
 
 -----
@@ -392,7 +391,7 @@ import math
 4 * math.pi / 3　 # 理論値:4.1887902047863905
 ```
 
-1.  下記コード入力
+1.  下記コード入力して，実行　　（視点は固定）
    
 ```python
 import numpy as np
@@ -421,7 +420,7 @@ plt.show()
 <img src='./img/sphere.png' width=60%>
 
 
-2. グラフィクスを plotlyに変更し，　視点をマウス操作で自由に移動
+2. グラフィクスを plotlyに変更　（視点をマウス操作で自由に変えられる）
 
 ```python
 import numpy as np
@@ -451,8 +450,9 @@ fig.show()
 <div style="page-break-before:always"></div>
 
 ## セッション4.  Pythonで 3Dグラフ表示
-    [ToDo] 
-    　3Dプリンタの積層方式で図形を立体化
+    【実施すること】
+    - 　3Dプリンタの積層方式で図形を立体化  (視点固定)
+    - 　3Dプリンタの積層方式で図形を立体化  (視点変更可能)
 
 ```python
 import numpy as np
@@ -466,7 +466,7 @@ fig = plt.figure()
 ax = fig.add_subplot(projection='3d')
 ax.set_title('Heart Curve 3D')
 
-# Z軸方向に曲線を積層: 3Dプリンタ方式
+# Z軸方向に曲線を積層: 3Dプリンタ方式　　（視点は固定）
 for z in range(11):
     # 金色からセピア色に変化
     r = 1 - 0.24 * z / 10
@@ -491,7 +491,7 @@ y = 13 * np.cos(t) - 5 * np.cos(2 * t) - 2 * np.cos(3 * t) - np.cos(4 * t)
 fig = go.Figure()
 fig.update_layout(title='Heart Curve 3D', scene=dict(xaxis_title='X', yaxis_title='Y', zaxis_title='Z'))
 
-# Z軸方向に曲線を積層: 3Dプリンタ方式
+# Z軸方向に曲線を積層: 3Dプリンタ方式　（視点変更可能）
 for z in range(30):
     fig.add_trace(go.Scatter3d(x=x, y=y, z=[z] * len(x), mode='lines', line=dict(colorscale=[[0, 'green'], [0.5, 'red'], [1.0, 'rgb(0, 0, 255)']], cmin=0, cmax=10,width=5)))
     x = x * 0.91 
@@ -506,7 +506,7 @@ fig.show()
 ## セッション5.  WordCloud ワードクラウド
     [ToDo] 
      - テキストで頻出する単語を視覚表現する、例えば・・・
-     - 源氏物語、枕草子、三四郎、三国志、現代訳論語...の頻出単語
+     - 源氏物語、枕草子、三国志、現代訳論語...の頻出単語
 
 #### 源氏物語 <!-- omit in toc -->
 <img src='./img/wc-源氏物語.png' width=50%>
@@ -517,13 +517,12 @@ fig.show()
 #### 三国志 <!-- omit in toc -->
 <img src='./img/wc-三国志.png' width=50%>
 
-#### 三四郎 <!-- omit in toc -->
-<img src='./img/wc-三四郎.png' width=50%>
+#### 現代訳論語<!-- omit in toc -->
+<img src='./img/wc-現代訳論語.png' width=50%>
 
-#### 月に吠える <!-- omit in toc -->
-<img src='./img/wc-月に吠える.png' width=50%>
-
-- 事前準備、各種パッケージインストール
+- 事前準備、各種パッケージや日本語フォントのインストール
+- （約１分ほどかかります）
+  
 ```
 !apt install aptitude
 
@@ -610,7 +609,7 @@ def tfidf_fig(title,url):
 
     return fig
 
-# 青空文庫のタイトル、ファイルURL
+# 青空文庫のタイトル、ファイルURL　（追加可能です）
 Books = {
     '源氏物語' : 'https://www.aozora.gr.jp/cards/000052/files/5016_ruby_9746.zip',
     '三国志' : 'https://www.aozora.gr.jp/cards/001562/files/52409_ruby_51058.zip',
@@ -630,7 +629,6 @@ def main():
     display(Image(fig[1]))
 
 main()
-
 ```
 
 
@@ -638,6 +636,10 @@ main()
 <div style="page-break-before:always"></div>
 
 ## セッション6.  稀少データは自分で作る（MCMC）
+
+    【実施すること】
+    - 　
+    - 
 
 - データがなければ、データ分析は始まらない
 - 稀少データは、集めることさえ難しい
@@ -651,6 +653,15 @@ main()
 
 ## セッション7.  量子テレポーテーションって何？
 
+    【実施すること】
+    - 量子テレポーテーションの意味を理解
+    - 量子ビットは確率状態をもつ　　（指数関数的計算力の源泉，量子重ね合わせ）
+    - 量子ビットは観測すると確率状態が壊れる
+    - 量子ビットはコピーできない
+    - コピーできない量子ビットを観測せずに転送したい (他の誰かに伝えたい)
+    - 転送装置として量子もつれ（エンタングルメント）を使う
+    - 量子ゲートを組み立てて表示
+  
 ```python
 !pip install qiskit qiskit-aer
 !pip install qiskit[visualization]
@@ -720,8 +731,7 @@ plot_state_qsphere(statevector)
 
 ## セッション8.  最適化問題を物理法則で解いてもらう
 
-### 焼きなまし法とパラメタ調整のお話[^1]  <!-- omit in toc -->
-
+#### 焼きなまし法とパラメタ調整のお話[^1]  <!-- omit in toc -->
 
   カナダのD-Wave Systems社は，量子焼きなまし法の計算原理を導入したアニーリングマシンD-Waveを開発した企業として有名です[^1].
   ここでは，D-Wave社が提供する焼きなまし法のPythonパッケージ```D-Wave Neal```を活用して，最適化問題の求解事例を紹介します．
@@ -743,7 +753,7 @@ plot_state_qsphere(statevector)
 [^3]:[擬似アニーリングと量子アニーリング](https://qiita.com/3110atsu1217/items/f74c898c0b669a4fadd7)
 
 
-# 最適化問題における制約条件とペナルティ項  <!-- omit in toc -->
+#### 最適化問題における制約条件とペナルティ項  <!-- omit in toc -->
 
 　 焼きなまし法をざっくりと説明すると，「熱エネルギーや運動位置エネルギーが高い状態を不安定（正解が存在する確率小）」，「エネルギーが最も低い状態を安定（正解が存在する確率大）」とみなして，正解を発見するためにエネルギーが低いところを優先探索するプロセスです．
   エネルギーの高低を物理現象にゆだねて，探索範囲を絞り込む考え方です．
@@ -759,7 +769,7 @@ plot_state_qsphere(statevector)
 [^5]: [機械学習エンジニアのためのTransformers, 最先端の自然言語処理ライブラリによるモデル開発](https://www.oreilly.co.jp/books/9784873119953/)
 
 
-# SA法とハイパーパラメタチューニング  <!-- omit in toc -->
+#### SA法とハイパーパラメタチューニング  <!-- omit in toc -->
 
 - D-Wave neal (https://docs.ocean.dwavesys.com/projects/neal/en/latest/) 
 
@@ -918,9 +928,6 @@ _ _ _ _ _ _ _ _ _ _ _ Q _ _ _ _ _ _ _ _ _ _ _ _
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ Q _ _ _ _ 
 
 ```
-
-　D-Wave社が提供する焼きなまし法のPythonパッケージ```D-Wave Neal```を活用して，最適化問題の求解事例を紹介しました．あわせて，制約条件に違反するペナルティ項の重みパラメータをチューニングすることで，求解の精度を調整する手法とプロセスを示しました.
-```D-Wave Neal```におけるSimulated Annealing Samplerは，近似的なボルツマンサンプリングやヒューリスティック最適化に使えるサンプラーで，より高度な応用が期待できると考えます.
 
 [^1]:焼きなまし法とパラメタ調整(https://qiita.com/khrive/items/b8e0da331c0c659cb000)
 
