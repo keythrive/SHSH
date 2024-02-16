@@ -317,7 +317,7 @@ port,path = 8000,''
 
 google.colab.output.serve_kernel_port_as_iframe(port, path=path)
 ```
-<img src='./img/laughing.png' width=70%>
+<img src='./img/laughing.png' width=50%>
 
 
 -----
@@ -377,9 +377,12 @@ test_map(11)
 ## セッション3.  球の体積、モンテカルロ法
 
     【実施すること】
-    　・3D空間にランダムな点描画で球を表現
-    　・球の体積を試算
-    　・モンテカルロ法の重要性を確認
+    　- 3D空間にランダムな点描画で球を表現
+    　- 球の中に入る確率計算で，　球の体積を見積もる　
+    　- モンテカルロ法の意義を確認
+    - 確率分布に従うデータ生成へ
+
+理論値は $4*\pi /3$
 
 1.  下記コード入力
    
@@ -441,39 +444,6 @@ fig.show()
 import math
 math.pi *4/3　# 理論値:  4.1887902047863905
 ```
-
-import requests
-import xmltodict
-import folium
-
-GeospatialUrl = "http://geocode.csis.u-tokyo.ac.jp/cgi-bin/simple_geocode.cgi?output=json&addr="
-
-def address2geo(address):
-  lat,lng = 0,0
-  s_quote = requests.utils.quote(address)
-  response = requests.get(GeospatialUrl + s_quote)
-  if response.status_code == 200:
-     json_data = xmltodict.parse(response.text)
-     data = dict(json_data)
-     result = data['results']
-     lat = result["candidate"]['latitude']
-     lng = result["candidate"]['longitude']
-  else:
-     print(f"Error: {response.status_code}")
-  return lat,lng
-
-def test_map(scale=10):
-  niigata = [37.916192,139.036413]
-  address_list = ["新潟県新潟市中央区米山3-1-53", "新潟県新発田市豊町3丁目7-6"]
-
-  for a in address_list:
-     map = folium.Map(location=niigata, zoom_start=scale)
-     lat,lng = address2geo(a)
-     folium.Marker([lat,lng], popup=a).add_to(map)
-  return map
-
-test_map(11)
-
 
 -----
 <div style="page-break-before:always"></div>
