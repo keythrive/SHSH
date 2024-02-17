@@ -779,7 +779,7 @@ qc.z (2).c_if (crz, 1)  # アリスからの古典通信が10 → Zゲートで�
 qc.draw (output='mpl')
 ```
 
-<img src='./img/Q-gate.png' width=80%>
+<img src='./img/Q-gate.png' width=70%>
 
 ```python
 backend = Aer.get_backend('statevector_simulator')
@@ -789,7 +789,7 @@ statevector = result.get_statevector()
 plot_bloch_multivector(statevector)
 plot_state_qsphere(statevector)
 ```
-<img src='./img/Q-bloch.png' width=80%>
+<img src='./img/Q-bloch.png' width=50%>
 
 
 -----
