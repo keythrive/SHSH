@@ -89,15 +89,15 @@
 - カスタマイズやアレンジは後日、家から実施可能です
 - 下記はイメージですが、リストから適宜、ピックアップして演習します
 
-||学習項目|概要、方法|ハンズオン|
+||学習項目|概要、方法|ノートブックファイル|
 |-|-|-|:-:|
 |0|Pythonでクラシック音楽、動画再生|クラウド環境でPython実行しWebで音楽・動画再生||
-|1|姿勢推定／顔の中心位置検出|Colabで **The Laughing Man2024/02**|3|
-|2|地図と現在地|現在地点の拡大縮小可能な地図を表示|1|
-|3|3D表現|3D空間にランダムな点描画で球を表現、球の体積を試算<br>3Dプリンタの積層方式で図形を立体化||
-|4|WordCloud|（国語、英語の先生方向け）<br>テキストで頻出する単語を視覚表現|2|
-|5|データ分析・データ生成|生成AIに訊く：創造主は確率でデータを創造する?|4|
-|6|量子ゲート|量子テレポーテーションって何？||
+|1|姿勢推定／顔の中心位置検出|Colabで **The Laughing Man2024/02**|　https://github.com/keythrive/SHSH/blob/main/notebooks/LaughingMan202402.ipynb　|
+|2|地図と現在地|現在地点の拡大縮小可能な地図を表示|　https://github.com/keythrive/SHSH/blob/main/notebooks/Address2GeoLL.ipynb　|
+|3|3D表現|3Dプリンタの積層方式で図形を立体化<br>3D空間にランダムな点描画で球を表現、球の体積を試算| https://github.com/keythrive/SHSH/blob/main/notebooks/Funny_3D.ipynb |
+|4|WordCloud|（国語、英語の先生方向け）<br>テキストで頻出する単語を視覚表現| https://github.com/keythrive/SHSH/blob/main/notebooks/TFIDF_WordCloud.ipynb |
+|5|データ分析・データ生成|生成AIに訊く：創造主は確率でデータを創造する?| https://github.com/keythrive/SHSH/blob/main/notebooks/MC_Random.ipynb <br> https://github.com/keythrive/SHSH/blob/main/notebooks/Ja_En_Mt_sampling.ipynb |
+|6|量子ゲート|量子テレポーテーションって何？| https://github.com/keythrive/SHSH/blob/main/notebooks/Q_teleport.ipynb |
 |7|最適化問題の量子的求解|8-Queen||
 
 -----
@@ -138,6 +138,15 @@
 - 必要に応じてPython学習環境,たとえばPyWeb集合学習、チュートリアルなど、  https://pyweb.ayax.jp/PyWeb.html#pywebver
 
 - 事前にざっと目を通し、予習やお試しを進めておくとよいでしょう
+
+-  参考動画：　Google Colaboratoryの使い方
+
+|タイトル|URL|再生時間(min)|
+|-|-|:-:|
+|【6分で分かる】Google colaboratoryの使い方|https://youtu.be/2tm8qrjVrk8|6|
+|Google Colaboratoryによる環境構築|https://youtu.be/XvuZK-6QMCo|5|
+|たった1分でPythonのプログラミングを始めるGoogle Colaboratoryの使い方|https://youtu.be/wMXhZAINYhw|20|
+|Google Colaboratoryの使い方【高校情報1】|https://youtu.be/YoDnnC9yM90|5|
 
 -----
 <div style="page-break-before:always"></div>
