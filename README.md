@@ -1,9 +1,9 @@
-### Shibata　HighSchool　HandsOn
+### Shibata Senior High School Hands-on
 ------
 
 <center>
 
-# 講義ノート (Alpha) <!-- omit in toc -->
+# 講義ノート  <!-- omit in toc -->
 ## 新潟県立新発田高等学校 <!-- omit in toc -->
 #### 研修名： 課題研究のための情報処理 <!-- omit in toc -->
 #### 2024/2/19(火) 14:10-16:50 @ 新発田高等学校 <!-- omit in toc -->
@@ -16,28 +16,29 @@
 
 - [高校生の課題探求型学習に向けて](#高校生の課題探求型学習に向けて)
   - [課題探求型の重要性](#課題探求型の重要性)
-  - [本研修の概要](#本研修の概要)
-  - [獲得するスキル](#獲得するスキル)
-  - [演習内容](#演習内容)
-  - [事前準備](#事前準備)
-  - [予習、自主トレ](#予習自主トレ)
-    
-- [セッション0.  Pythonでクラシック音楽・動画再生](#セッション0--pythonでクラシック音楽動画再生)
-- [セッション1.  Colabで The Laughing Man](#セッション1--colabで-the-laughing-man)
-- [セッション2.  現在地の近傍地図](#セッション2--現在地の近傍地図)
-- [セッション3.  球の体積、モンテカルロ法](#セッション3--球の体積モンテカルロ法)
-- [セッション4.  Pythonで 3Dグラフ表示](#セッション4--pythonで-3dグラフ表示)
-- [セッション5.  WordCloud ワードクラウド](#セッション5--wordcloud-ワードクラウド)
-- [セッション6.  欲しいデータを自分で作る（MCMC）](#セッション6--欲しいデータを自分で作るmcmc)
-- [セッション7.  量子テレポーテーションって何？](#セッション7--量子テレポーテーションって何)
-- [セッション8.  最適化問題を物理法則で解いてもらう](#セッション8--最適化問題を物理法則で解いてもらう)
+- [本研修の概要](#本研修の概要)
+- [目的：本日お持ち帰りいただきたいスキル](#目的本日お持ち帰りいただきたいスキル)
+- [演習内容](#演習内容)
+- [事前準備](#事前準備)
+- [予習、自主トレ](#予習自主トレ)
+- [テーマ0.  Pythonでクラシック音楽・動画再生](#テーマ0--pythonでクラシック音楽動画再生)
+- [テーマ1.  Colabで The Laughing Man](#テーマ1--colabで-the-laughing-man)
+- [テーマ2.  現在地の近傍地図  操作説明で使用](#テーマ2--現在地の近傍地図--操作説明で使用)
+- [テーマ3.  球の体積、モンテカルロ法  ハンズオン1](#テーマ3--球の体積モンテカルロ法--ハンズオン1)
+- [テーマ4.  Pythonで 3Dグラフ表示](#テーマ4--pythonで-3dグラフ表示)
+- [テーマ5.  WordCloud ワードクラウド  ハンズオン2](#テーマ5--wordcloud-ワードクラウド--ハンズオン2)
+- [テーマ6. 欲しいデータは自分で作る（MCMC） ハンズオン3a , ハンズオン3b](#テーマ6-欲しいデータは自分で作るmcmc-ハンズオン3a--ハンズオン3b)
+- [テーマ7.  量子テレポーテーションって何？](#テーマ7--量子テレポーテーションって何)
+- [テーマ8.  最適化問題を物理法則で解いてもらう](#テーマ8--最適化問題を物理法則で解いてもらう)
+- [参考：　Qiitaサイトへの執筆記事](#参考qiitaサイトへの執筆記事)
+
 
 -----
 <div style="page-break-before:always"></div>
 
-# 高校生の課題探求型学習に向けて
+## 高校生の課題探求型学習に向けて
 
-## 課題探求型の重要性
+### 課題探求型の重要性
 ### 現状に満足せず、妥協しない、成長と挑戦の源泉  <!-- omit in toc -->
 - 問題解決、よりも、**問題発見**が難しい
 - 金鉱採掘、よりも、**金脈発見**が難しい
@@ -54,9 +55,9 @@
 - 多様な視点,　異文化融合
 
 ###  課題探求に必要な資質 <!-- omit in toc -->
-- 面白い！不思議！と思う感受性
+- 面白い、不思議、と思う感受性
 - 困っている人を助ける視点
-- 知らないことを知りたい、と思う知識欲
+- 知らないことを知りたい：知的欲求
 - 普通と違うユニークな視点を受容する広い視野、寛容性
 
 -----
@@ -66,11 +67,15 @@
 
 - 2024年度 **総合的な探求の時間**に役立つ情報処理プラクティス
 - 2025年共通テストに、**情報Ⅰ**が追加される背景事情
+- 高校生の探究活動へ展開・応用
+- インターネット接続されたPC、Webブラウザの対話作業
 - データ分析、実践的Pythonプログラミング～初級中級ハンズオン～
 - 生成AIを副操縦士としたプログラミング
-- インターネット接続されたPC、Webブラウザの対話作業
-- 高校生の探究活動へ展開・応用
-- 本日のアジェンダ：　こちら(https://github.com/keythrive/SHSH/blob/main/%E6%9C%AC%E6%97%A5%E3%82%A2%E3%82%B8%E3%82%A7%E3%83%B3%E3%83%80A%E6%A1%88.pdf)
+ 
+- 本日のアジェンダ：　[こちらをご覧ください][Agenda]
+  
+[Agenda]: https://github.com/keythrive/SHSH/blob/main/%E6%9C%AC%E6%97%A5%E3%82%A2%E3%82%B8%E3%82%A7%E3%83%B3%E3%83%80A%E6%A1%88.pdf
+
     
 ## 目的：本日お持ち帰りいただきたいスキル
 - 「こんなことできるのかな？」　⇒　「**やればできる**」を実感する
@@ -84,22 +89,33 @@
 ## 演習内容
 - Google Colaboratory、Microsoft Bing AI Copilotを使います
 - 参加者の皆様のペース配分を見ながら
-- 1セッション30分程度でハンズオン × 3～4セッション行います
+- 1セッション30分程度でハンズオン × 3セッション行います
 - 1セッション30分でコーディング＆動作確認まで実施します
 - Python初心者はペアプログラミング等follow体制を考えます
-- カスタマイズやアレンジは後日、家から実施可能です
-- 下記はイメージですが、リストから適宜、ピックアップして演習します
+- 下記はイメージです: リストから選んで演習します
+- 自由課題、カスタマイズ、アレンジはご自由に、いつでも実施可能です
 
 ||学習項目|概要、方法|ノートブックファイル|
-|-|-|-|:-:|
-|0|Pythonでクラシック音楽、動画再生|クラウド環境でPython実行しWebで音楽・動画再生||
-|1|姿勢推定／顔の中心位置検出|Colabで **The Laughing Man2024/02**|　https://github.com/keythrive/SHSH/blob/main/notebooks/LaughingMan202402.ipynb　|
-|2|地図と現在地|現在地点の拡大縮小可能な地図を表示|　https://github.com/keythrive/SHSH/blob/main/notebooks/Address2GeoLL.ipynb　|
-|3|3D表現|3Dプリンタの積層方式で図形を立体化<br>3D空間にランダムな点描画で球を表現、球の体積を試算| https://github.com/keythrive/SHSH/blob/main/notebooks/Funny_3D.ipynb |
-|4|WordCloud|（国語、英語の先生方向け）<br>テキストで頻出する単語を視覚表現| https://github.com/keythrive/SHSH/blob/main/notebooks/TFIDF_WordCloud.ipynb |
-|5|データ分析・データ生成|生成AIに訊く：創造主は確率でデータを創造する?| https://github.com/keythrive/SHSH/blob/main/notebooks/MC_Random.ipynb <br> https://github.com/keythrive/SHSH/blob/main/notebooks/Ja_En_Mt_sampling.ipynb |
-|6|量子ゲート|量子テレポーテーションって何？| https://github.com/keythrive/SHSH/blob/main/notebooks/Q_teleport.ipynb |
-|7|最適化問題の量子的求解|8-Queen||
+|-|-|-|-|
+|||ハンズオンで演習予定||
+|0|地図と現在地|現在地点の拡大縮小可能な地図を表示|　[操作説明で使用][hand0] |
+|1|3D表現|3Dプリンタの積層方式で図形を立体化<br>3D空間にランダムな点描画で球を表現、球の体積を試算| [ハンズオン1][hand1] |
+|2|WordCloud|（国語、英語の先生方向け）<br>テキストで頻出する単語を視覚表現|[ハンズオン2][hand2] |
+|3|データ分析・データ生成|生成AIに訊く：創造主は確率でデータを創造する?| [ハンズオン3a][hand3a] <br> [ハンズオン3b][hand3b] |
+|||以下は自由課題||
+|4|姿勢推定／顔の中心位置検出|Colabで **The Laughing Man2024/02**| [自由課題1][free1]|
+|5|Pythonでクラシック音楽、動画再生|クラウド環境でPython実行しWebで音楽・動画再生||
+|6|量子ゲート|量子テレポーテーションって何？| [自由課題2][free2]|
+|8|最適化問題の量子的求解|8-Queen| 自由課題3 |
+
+[hand0]: https://github.com/keythrive/SHSH/blob/main/notebooks/Address2GeoLL.ipynb
+[hand1]: https://github.com/keythrive/SHSH/blob/main/notebooks/Funny_3D.ipynb
+[hand2]: https://github.com/keythrive/SHSH/blob/main/notebooks/TFIDF_WordCloud.ipynb
+[hand3a]: https://github.com/keythrive/SHSH/blob/main/notebooks/MC_Random.ipynb
+[hand3b]: https://github.com/keythrive/SHSH/blob/main/notebooks/Ja_En_Mt_sampling.ipynb
+[free1]: https://github.com/keythrive/SHSH/blob/main/notebooks/LaughingMan202402.ipynb
+[free2]:  https://github.com/keythrive/SHSH/blob/main/notebooks/Q_teleport.ipynb
+
 
 -----
 <div style="page-break-before:always"></div>
@@ -108,21 +124,28 @@
 
 ||項目|作業|チェック|
 |:-:|-|-|:-:|
-|0|Googleアカウント取得|gmailサインアップ・サインイン|✓|
 |1|Microsoftアカウント取得|Windows10 ログイン|✓|
 |2|WebブラウザEdge起動|ブラウザ画面を4つほど利用予定|✓|
-|3|Google Colaboratoryログイン|https://colab.research.google.com/?hl=ja|✓|
-|4|新規ノートブック作成|基本操作を試す|✓|
-|5|Microsoft Bing AI画面表示|Copilotに質問、基本操作を試す|✓|
-|6|基本動作確認 | 講義用notebookファイルをDownloadして試す (https://github.com/keythrive/SHSH/tree/main/notebooks)|✓|
-|7|Pythonパッケージの事前インストール|（Colaboratoryで実行いただくPythonパッケージの事前インストール設定作業）|✓|
+|3|Googleアカウント取得|gmailサインアップ・サインイン|✓|
+|4|Google Colaboratoryログイン|https://colab.research.google.com/?hl=ja|✓|
+|5|新規ノートブック作成|基本操作、セル実行、Markdown説明|✓|
+|6|Microsoft Bing AI画面表示|Copilotに質問、基本操作を試す|✓|
+|7|基本動作確認 | 講義用notebookファイルをDownload/Uploadして試す (https://github.com/keythrive/SHSH/tree/main/notebooks)|✓|
+|8|Pythonパッケージの事前インストール|（Colaboratoryで実行いただくPythonパッケージの事前インストール設定作業）|✓|
 
 - 演習のチョイスによりますが、下記を事前に実行済状態であればスムーズに演習に入れると思います
 - 下記URLからJupyterファイルをダウンロード:
 
   　　https://github.com/keythrive/SHSH/tree/main/notebooks
 
+------
 - Colaboratoryで実行いただくPythonパッケージの事前インストール設定作業：
+**注意:** 
+  - Colaboratoryでは、```pip install パッケージ名``` で必要なパッケージをインストールできます.
+  - ただしクラウド環境につき、ログアウトしたり長時間放置すると、ランタイム環境がリセットされて、一度インストールしたパッケージも消失することがあります.
+  - 環境がゼロリセットされることはある意味正しく便利です。やり直しがきくので。
+  - 毎回、パッケージをインストールできる、ことを良しとします。
+  - 何度もインストールしたくない、そのバージョンのパッケージを使いたい場合は別の方法があります(メモ参照)
 
 ```
 !pip install geopy folium plotly
@@ -134,6 +157,20 @@
 !apt-get -y install fonts-ipafont-gothic
 !pip3 install mecab-python3==0.7
 ```
+
+- 何度もインストールしたくない場合：Google Driveにパッケージを保存する方法
+```
+from google.colab import drive
+drive.mount('/content/gdrive')
+
+package_path = '/content/gdrive/MyDrive/<dir_name>/my-site-packages/'
+!pip install <package_name> --target $package_path
+
+import sys
+sys.path.append(package_path)
+import <package_name>
+```
+------
 
 ## 予習、自主トレ
 - 必要に応じてPython学習環境,たとえばPyWeb集合学習、チュートリアルなど、  https://pyweb.ayax.jp/PyWeb.html#pywebver
@@ -152,7 +189,7 @@
 -----
 <div style="page-break-before:always"></div>
 
-## セッション0.  Pythonでクラシック音楽・動画再生
+##  テーマ0.  Pythonでクラシック音楽・動画再生
 
     【実施すること】 
     　・クラウド環境でPythonプログラムを作成し実行 
@@ -224,7 +261,7 @@ show_local_mp4_video(video_path)
 -----
 <div style="page-break-before:always"></div>
 
-## セッション1.  Colabで The Laughing Man
+## テーマ1.  Colabで The Laughing Man
 
     【実施すること】　深層機械学習（ディープラーニング）
     　・Webカメラ動画から、人の姿勢推定し顔の中心（鼻）を位置検出
@@ -331,11 +368,10 @@ google.colab.output.serve_kernel_port_as_iframe(port, path=path)
 ```
 <img src='./img/laughing.png' width=40%>
 
-
 -----
 <div style="page-break-before:always"></div>
 
-## セッション2.  現在地の近傍地図
+## テーマ2.  現在地の近傍地図  [操作説明で使用][hand0]
     【実施すること】　クラウド環境Pythonプログラムを実行し、
      - Webブラウザ上に、現在地近傍の地図を表示
      - 拡大縮小可能な地図で簡単な道案内、ナビに利用できる
@@ -386,7 +422,8 @@ test_map(11)
 -----
 <div style="page-break-before:always"></div>
 
-## セッション3.  球の体積、モンテカルロ法
+
+## テーマ3.  球の体積、モンテカルロ法  [ハンズオン1][hand1]
 
     【実施すること】
     　- 3D空間にランダムな点描画で球を表現
@@ -461,7 +498,7 @@ fig.show()
 -----
 <div style="page-break-before:always"></div>
 
-## セッション4.  Pythonで 3Dグラフ表示
+## テーマ4.  Pythonで 3Dグラフ表示
     【実施すること】
     - 　3Dプリンタの積層方式で図形を立体化  (視点固定)
     - 　3Dプリンタの積層方式で図形を立体化  (視点変更可能)
@@ -515,7 +552,8 @@ fig.show()
 -----
 <div style="page-break-before:always"></div>
 
-## セッション5.  WordCloud ワードクラウド
+ 
+## テーマ5.  WordCloud ワードクラウド  [ハンズオン2][hand2]
     【実施すること】 小説などテキストで頻出する単語を視覚表現
      - 例えば，源氏物語、枕草子、三国志、現代訳論語...
      - どんなキーワードがどれくらいの数で登場するか？
@@ -648,7 +686,7 @@ main()
 -----
 <div style="page-break-before:always"></div>
 
-## セッション6. 欲しいデータは自分で作る（MCMC）
+## テーマ6. 欲しいデータは自分で作る（MCMC） [ハンズオン3a][hand3a] , [ハンズオン3b][hand3b] 
 
 - データがなければ、データ分析は始まらない
 - レアなデータは、集めることさえ難しい
@@ -669,10 +707,10 @@ main()
     - ベイズ推定により，神のルールを当てに行く
     - 推定された分布が，神のルールをどれくらい近似しているか確認する
 
-##### 創造主の視点：　英語の成績データを作る
+##### 創造主の視点：　英語の成績データを作る  <!-- omit in toc -->
 <img src='./img/English-Test-Score.png' width=50%>
 
-##### 生成AIに質問して，Pythonコードとその意味を学ぶ
+##### 生成AIに質問して，Pythonコードとその意味を学ぶ  <!-- omit in toc -->
 
 -　生成AIへの質問文例（プロンプト）
 ```
@@ -694,16 +732,16 @@ main()
     - 生成AIのアドバイスに限界を感じる前に，
     - 速やかに自分自身で考えて，問題解決に全集中しましょう
 
-##### 人間の視点：　英語の成績データから，神のみぞ知るルールを推定する
+##### 人間の視点：　英語の成績データから，神のみぞ知るルールを推定する <!-- omit in toc -->
 <img src='./img/New-Score.png' width=50%>
 
 <img src='./img/Bayes-1.png' width=50%>
 
 <img src='./img/Bayes-2.png' width=50%>
 
-<img src='./img/Bayes-3.png' width=50%>
+<img src='./img/Bayes-3.png' width=40%>
 
-####  「神のみぞ知る」ルールを推定した結果
+#####  「神のみぞ知る」ルールを推定した結果  <!-- omit in toc -->
 -  1つ目の正規分布は，(平均 $\mu_0$, 分散 $\sigma_0$) == (74.668,4.3) 
 -  もう一つの正規分布は，(平均 $\mu_1$, 分散 $\sigma_1$) == (53.844,6.5) と推定された．
 - 神モードで，生成AIに依頼した設定を確認：
@@ -727,7 +765,7 @@ sigma2 = 4 # 分散
 -----
 <div style="page-break-before:always"></div>
 
-## セッション7.  量子テレポーテーションって何？
+## テーマ7.  量子テレポーテーションって何？
 
     【実施すること】
     - 量子テレポーテーションの意味を理解
@@ -799,13 +837,13 @@ statevector = result.get_statevector()
 plot_bloch_multivector(statevector)
 plot_state_qsphere(statevector)
 ```
-<img src='./img/Q-bloch.png' width=50%>
+<img src='./img/Q-bloch.png' width=40%>
 
 
 -----
 <div style="page-break-before:always"></div>
 
-## セッション8.  最適化問題を物理法則で解いてもらう
+## テーマ8.  最適化問題を物理法則で解いてもらう
 
 #### 焼きなまし法とパラメタ調整のお話[^1]  <!-- omit in toc -->
 
@@ -836,16 +874,12 @@ plot_state_qsphere(statevector)
 　したがって目的関数は正解に近づくほど，制約条件を充足するほど低い値をとるように設計します．逆に，制約違反するケースは高いエネルギー値をペナルティ（罰則）として与えます．
 　大域的な最適解を得るために温度を徐々に下げながら局所的な最適解（ローカルミニマム）に陥らないように確率的に探索を行います.
 
-　目的関数と制約条件の関数は，最終的に一つのエネルギー関数に統合するため，それぞれの制約条件（違反）にどれくらいのペナルティを与えるか？重みバランスを調整する必要があります．
-　通常，この重みバランス調整は，プログラミングと実行評価を繰り返しながら，問題の設計者やプログラマの手作業で実行します．
-　当然ながら，制約条件の項目数が増えるほど，重みパラメタの調整は複雑です．いわゆる，ランダムサーチやグリッドサーチといった手法で数多くのパラメタの組合せで求解を評価するのも大変な作業です．そこで，手作業に代えてコンピュータ・プログラム自身にハイパーパラメタ調整作業を任せる手法を適用します．具体的には，OptunaというPythonライブラリを活用します．Optunaの詳しい説明は参考[^4] [^5]を御覧ください．
-
-[^4]: [An open source hyperparameter optimization framework to automate hyperparameter search](https://optuna.org/)
-
-[^5]: [機械学習エンジニアのためのTransformers, 最先端の自然言語処理ライブラリによるモデル開発](https://www.oreilly.co.jp/books/9784873119953/)
-
 
 #### SA法とハイパーパラメタチューニング  <!-- omit in toc -->
+
+　目的関数と制約条件の関数は，最終的に一つのエネルギー関数に統合するため，それぞれの制約条件（違反）にどれくらいのペナルティを与えるか？重みバランスを調整する必要があります．
+　通常，この重みバランス調整は，プログラミングと実行評価を繰り返しながら，問題の設計者やプログラマの手作業で実行します．
+　当然ながら，制約条件の項目数が増えるほど，重みパラメタの調整は複雑です．いわゆる，ランダムサーチやグリッドサーチといった手法で数多くのパラメタの組合せで求解を評価するのも大変な作業です．そこで，手作業に代えてコンピュータ・プログラム自身にハイパーパラメタ調整作業を任せる手法を適用します．具体的には，OptunaというPythonライブラリを活用します
 
 - D-Wave neal (https://docs.ocean.dwavesys.com/projects/neal/en/latest/) 
 
@@ -1018,7 +1052,4 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ Q _ _ _ _
 - 焼きなまし法とパラメタ調整について ( https://qiita.com/khrive/items/b8e0da331c0c659cb000 )
 - Fixstars Amplifyで，制約充足問題(N-Queen問題)に挑戦してみた ( https://qiita.com/khrive/items/78fceb402599ce7fd775 )
 - O'REILLYのPython書籍を７冊ななめ読みしたメタクラスの話( https://qiita.com/khrive/items/0c3db4a7f96b816bf518 )
-
------
-<div style="page-break-before:always"></div>
 
