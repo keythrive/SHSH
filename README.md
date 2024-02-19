@@ -176,6 +176,26 @@ import <package_name>
 - 必要に応じてPython学習環境,たとえばPyWeb集合学習、チュートリアルなど、  https://pyweb.ayax.jp/PyWeb.html#pywebver
 
 - 事前にざっと目を通し、予習やお試しを進めておくとよいでしょう
+-  Colaboratory キーボードショートカット
+ 
+```
+ツールメニュー→　キーボードショートカット  Ctrl+M H
+
+実行：　Shirt ＋Enter
+実行中断：　Ctrl＋M　I
+
+上にセル追加：　　Ctrl＋M　A
+下にセル追加：　　Ctrl＋M　B
+セルの削除：　Ctrl＋M　D
+　
+上にセル移動：　　Ctrl＋M　K
+下にセル移動：　　Ctrl＋M　J
+
+テキスト化：　Ctrl＋M　M
+コード化：　Ctrl＋M　Y
+```
+
+
 
 -  参考動画：　Google Colaboratoryの使い方
 
